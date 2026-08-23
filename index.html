@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshiii — Content Creator Portfolio | Kurunegala</title>
+    <meta name="description"
+        content="Official portfolio of Harshiii 🧸, a content creator based in Kurunegala specialising in food, fashion and lifestyle. Strong reach on TikTok and Facebook. Collaborate with top brands.">
+    <meta property="og:title" content="Harshiii — Content Creator | Kurunegala">
+    <meta property="og:description"
+        content="Crafting authentic visual stories that connect brands with the right audience. 200K+ views per video.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Full-screen Three.js Canvas -->
+    <canvas id="three-canvas"></canvas>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-inner">
+            <div class="loader-brand">Harshiii</div>
+            <div class="loader-bar">
+                <div class="loader-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">Harshi<span>iii</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" data-nav>Home</a></li>
+                <li><a href="#about" data-nav>About</a></li>
+                <li><a href="#reach" data-nav>Reach</a></li>
+                <li><a href="#packages" data-nav>Packages</a></li>
+                <li><a href="#brands" data-nav>Collaborations</a></li>
+                <li><a href="map.html" data-nav>Food Map</a></li>
+                <li><a href="#connect" data-nav>Connect</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="map.html" class="nav-btn-outline"><i class="fa-solid fa-map-location-dot"></i> Map</a>
+                <a href="#connect" class="nav-cta">Collaborate →</a>
+            </div>
+            <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="#hero" class="mobile-link">Home</a></li>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#reach" class="mobile-link">Reach</a></li>
+            <li><a href="#packages" class="mobile-link">Packages</a></li>
+            <li><a href="#brands" class="mobile-link">Collaborations</a></li>
+            <li><a href="map.html" class="mobile-link">Food Map</a></li>
+            <li><a href="#connect" class="mobile-link">Connect</a></li>
+        </ul>
+    </div>
+
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <section id="hero">
+        <div class="hero-inner">
+            <div class="hero-eyebrow">
+                <span class="eyebrow-dot"></span>
+                Content Creator &amp; Brand Collaborator · Kurunegala
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line" data-reveal="0">Crafting</span>
+                <span class="title-line accent" data-reveal="100">Authentic</span>
+                <span class="title-line" data-reveal="200">Visual Stories</span>
+            </h1>
+            <p class="hero-sub" data-reveal="400">
+                Collaborating with restaurants, clothing stores &amp; brands to create engaging,
+                high-quality content that genuinely connects with the right audience.
+            </p>
+            <div class="hero-actions" data-reveal="600">
+                <a href="#connect" class="btn-primary">
+                    <span>Collaborate Now</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#brands" class="btn-ghost">View Collabs</a>
+            </div>
+
+            <!-- Floating stats strip -->
+            <div class="hero-stats" data-reveal="800">
+                <div class="hero-stat">
+                    <span class="hero-stat-num" id="yt-subscribers">—</span>
+                    <span class="hero-stat-label">YouTube Subscribers</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">272K+</span>
+                    <span class="hero-stat-label">Best Video Views</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">18+</span>
+                    <span class="hero-stat-label">Brand Collabs</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero image column -->
+        <div class="hero-visual">
+            <div class="hero-photo-frame">
+                <img src="1.png" alt="Harshiii – Content Creator from Kurunegala" class="hero-photo">
+                <div class="photo-glow"></div>
+                <div class="hero-badge">
+                    <i class="fa-solid fa-star"></i>
+                    <span>Harshiii 🧸</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ REACH ═══════════════════ -->
+    <section id="reach" class="section-block">
+        <div class="section-container">
+            <div class="section-tag" data-animate>Audience Reach</div>
+            <h2 class="section-heading" data-animate>Numbers that<br>speak for themselves.</h2>
+
+            <div class="reach-grid">
+                <!-- YouTube — live from API -->
+                <div class="reach-card" data-animate>
+                    <div class="reach-icon"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="reach-num" id="yt-sub-count">—</div>
+                    <div class="reach-suffix" id="yt-sub-suffix"></div>
+                    <div class="reach-label">YouTube Subscribers<br><span class="live-badge">● Live</span></div>
+                    <div class="reach-bar">
+                        <div class="reach-fill" id="yt-fill" style="width:0%"></div>
+                    </div>
+                </div>
+                <!-- TikTok — stated from profile -->
+                <div class="reach-card" data-animate>
+                    <div class="reach-icon"><i class="fa-brands fa-tiktok"></i></div>
+                    <div class="reach-num counter" data-target="369">0</div>
+                    <div class="reach-suffix">K+</div>
+                    <div class="reach-label">TikTok Community Reach</div>
+                    <div class="reach-bar">
+                        <div class="reach-fill" style="width:92%"></div>
+                    </div>
+                </div>
+                <!-- Facebook — stated from profile -->
+                <div class="reach-card" data-animate>
+                    <div class="reach-icon"><i class="fa-brands fa-facebook"></i></div>
+                    <div class="reach-num counter" data-target="142">0</div>
+                    <div class="reach-suffix">K+</div>
+                    <div class="reach-label">Facebook Followers</div>
+                    <div class="reach-bar">
+                        <div class="reach-fill" style="width:35%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YouTube live stats panel -->
+            <div class="yt-live-panel" id="yt-live-panel" style="display:none;" data-animate>
+                <div class="yt-live-inner">
+                    <div class="yt-live-icon"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="yt-live-stats">
+                        <div class="yt-live-row">
+                            <span class="yt-live-label">Channel</span>
+                            <span class="yt-live-value" id="yt-channel-name">@bole98</span>
+                        </div>
+                        <div class="yt-live-row">
+                            <span class="yt-live-label">Subscribers</span>
+                            <span class="yt-live-value" id="yt-subs-full">—</span>
+                        </div>
+                        <div class="yt-live-row">
+                            <span class="yt-live-label">Total Views</span>
+                            <span class="yt-live-value" id="yt-views">—</span>
+                        </div>
+                        <div class="yt-live-row">
+                            <span class="yt-live-label">Videos</span>
+                            <span class="yt-live-value" id="yt-video-count">—</span>
+                        </div>
+                    </div>
+                    <div class="yt-live-badge">Live Data</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ ABOUT ═══════════════════ -->
+    <section id="about" class="section-block">
+        <div class="section-container about-layout">
+            <div class="about-image-wrap" data-animate>
+                <div class="about-img-frame">
+                    <img src="2.png" alt="About Harshiii – Content Creator">
+                    <div class="about-img-glow"></div>
+                </div>
+            </div>
+            <div class="about-content" data-animate>
+                <div class="section-tag">Who is Harshiii? 🧸</div>
+                <h2 class="section-heading left">Passion meets<br>authenticity.</h2>
+                <p class="about-para">
+                    Hi, I'm <strong>Harshiii</strong>, a passionate content creator based in
+                    <strong>Kurunegala</strong>.
+                    I manage highly engaging social media platforms with strong reach on TikTok and Facebook.
+                </p>
+                <p class="about-para">
+                    I have collaborated with <strong>restaurants, clothing stores, and various brands</strong> to create
+                    promotional content that helps businesses increase their visibility and attract the right audience.
+                </p>
+                <p class="about-para">
+                    I'm confident that my content can help increase your <strong>brand visibility and reach the right
+                        target audience</strong> across all platforms.
+                </p>
+                <div class="tag-list">
+                    <span class="tag">Food Reviews</span>
+                    <span class="tag">Fashion & Lifestyle</span>
+                    <span class="tag">Brand Campaigns</span>
+                    <span class="tag">Restaurant Promos</span>
+                    <span class="tag">Kurunegala Area</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ PACKAGES ═══════════════════ -->
+    <section id="packages" class="section-block">
+        <div class="section-container">
+            <div class="section-tag center" data-animate>Collaboration Packages</div>
+            <h2 class="section-heading center" data-animate>Choose your<br>campaign tier.</h2>
+
+            <div class="packages-grid">
+                <!-- Package 01 -->
+                <div class="pkg-card" data-animate>
+                    <div class="pkg-top">
+                        <div class="pkg-number">01</div>
+                        <div class="pkg-tier">Starter</div>
+                    </div>
+                    <div class="pkg-divider"></div>
+                    <ul class="pkg-features">
+                        <li><i class="fa-brands fa-tiktok"></i>1 TikTok Video</li>
+                        <li><i class="fa-brands fa-facebook"></i>1 Facebook Video</li>
+                        <li><i class="fa-brands fa-instagram"></i>1 Instagram Reel</li>
+                        <li><i class="fa-brands fa-youtube"></i>1 YouTube Short</li>
+                        <li><i class="fa-solid fa-gift"></i>Free Story Sharing on All Platforms</li>
+                        <li><i class="fa-solid fa-retweet"></i>Free Content Reposting Across All Platforms</li>
+                    </ul>
+                    <a href="#connect" class="pkg-btn">Get Started →</a>
+                </div>
+
+                <!-- Package 02 — Featured -->
+                <div class="pkg-card featured" data-animate>
+                    <div class="pkg-popular-badge">Most Popular</div>
+                    <div class="pkg-top">
+                        <div class="pkg-number">02</div>
+                        <div class="pkg-tier">Growth</div>
+                    </div>
+                    <div class="pkg-divider"></div>
+                    <ul class="pkg-features">
+                        <li><i class="fa-solid fa-check"></i>Everything in Package 01</li>
+                        <li><i class="fa-brands fa-tiktok"></i>1 TikTok Video</li>
+                        <li><i class="fa-brands fa-facebook"></i>1 Facebook Video</li>
+                        <li><i class="fa-brands fa-instagram"></i>1 Instagram Reel</li>
+                        <li><i class="fa-brands fa-youtube"></i>1 YouTube Short</li>
+                        <li><i class="fa-solid fa-gift"></i>Free Story Sharing on All Platforms</li>
+                        <li><i class="fa-solid fa-retweet"></i>Free Content Reposting Across All Platforms</li>
+                        <li><i class="fa-solid fa-upload"></i>You Can Upload Our Video on Your Every Platform</li>
+                    </ul>
+                    <a href="#connect" class="pkg-btn featured-btn">Get Started →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ BRANDS / COLLABORATIONS ═══════════════════ -->
+    <section id="brands" class="section-block">
+        <div class="section-container">
+            <div class="section-tag center" data-animate>Past Collaborations</div>
+            <h2 class="section-heading center" data-animate>Trusted by leading<br>brands &amp; local businesses.</h2>
+            <p class="section-sub center" data-animate>Video view counts from Kurunegala area collaborations</p>
+
+            <!-- Scrolling ticker -->
+            <div class="brands-ticker-wrap">
+                <div class="brands-ticker">
+                    <div class="brand-pill">Cafe Belaro</div>
+                    <div class="brand-pill">K Food</div>
+                    <div class="brand-pill">Chagiya Korean Ramen</div>
+                    <div class="brand-pill">Cocoberry</div>
+                    <div class="brand-pill">Black &amp; Gold Pub</div>
+                    <div class="brand-pill">Bing Chun Kurunegala</div>
+                    <div class="brand-pill">Lake Drive Leisure Park</div>
+                    <div class="brand-pill">The Caramel Crown</div>
+                    <div class="brand-pill">Max Ice Cream</div>
+                    <div class="brand-pill">Ministry of Cakes &amp; Bakes</div>
+                    <div class="brand-pill">Waves</div>
+                    <div class="brand-pill">Coco Berry</div>
+                    <div class="brand-pill">DeniMe Clothing</div>
+                    <div class="brand-pill">Kithro Restaurant</div>
+                    <div class="brand-pill">Immi's Cafe</div>
+                    <div class="brand-pill">Maha Rani</div>
+                    <div class="brand-pill">B's Wedding Card Shop</div>
+                    <div class="brand-pill">K Plus</div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="brand-pill">Cafe Belaro</div>
+                    <div class="brand-pill">K Food</div>
+                    <div class="brand-pill">Chagiya Korean Ramen</div>
+                    <div class="brand-pill">Cocoberry</div>
+                    <div class="brand-pill">Black &amp; Gold Pub</div>
+                    <div class="brand-pill">Bing Chun Kurunegala</div>
+                    <div class="brand-pill">Lake Drive Leisure Park</div>
+                    <div class="brand-pill">The Caramel Crown</div>
+                    <div class="brand-pill">Max Ice Cream</div>
+                    <div class="brand-pill">Ministry of Cakes &amp; Bakes</div>
+                    <div class="brand-pill">Waves</div>
+                    <div class="brand-pill">Coco Berry</div>
+                    <div class="brand-pill">DeniMe Clothing</div>
+                    <div class="brand-pill">Kithro Restaurant</div>
+                    <div class="brand-pill">Immi's Cafe</div>
+                    <div class="brand-pill">Maha Rani</div>
+                    <div class="brand-pill">B's Wedding Card Shop</div>
+                    <div class="brand-pill">K Plus</div>
+                </div>
+            </div>
+
+            <!-- Brand collaboration cards with view counts -->
+            <div class="brands-grid" data-animate>
+
+                <div class="brand-card hot">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">Cocoberry</span>
+                    <span class="brand-views">272K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:100%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card hot">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">Cafe Belaro</span>
+                    <span class="brand-views">200.2K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:73.6%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card hot">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">K Food</span>
+                    <span class="brand-views">188K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:69.1%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">Chagiya Korean Ramen</span>
+                    <span class="brand-views">165.6K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:60.9%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">Black &amp; Gold Pub &amp; Restaurant</span>
+                    <span class="brand-views">145K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:53.3%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">Bing Chun Kurunegala</span>
+                    <span class="brand-views">118.8K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:43.7%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">Lake Drive Leisure Park</span>
+                    <span class="brand-views">113.1K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:41.6%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">The Caramel Crown</span>
+                    <span class="brand-views">105.4K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:38.8%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">Max Ice Cream</span>
+                    <span class="brand-views">98.2K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:36.1%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">Ministry of Cakes &amp; Bakes</span>
+                    <span class="brand-views">97.1K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:35.7%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">Waves</span>
+                    <span class="brand-views">93.8K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:34.5%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">Coco Berry</span>
+                    <span class="brand-views">72.4K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:26.6%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">DeniMe Clothing</span>
+                    <span class="brand-views">67.4K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:24.8%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">Kithro Restaurant</span>
+                    <span class="brand-views">54K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:19.9%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">Immi's Cafe</span>
+                    <span class="brand-views">52.4K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:19.3%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">Maha Rani Indian Restaurant</span>
+                    <span class="brand-views">40.8K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:15%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">B's Wedding Card Shop</span>
+                    <span class="brand-views">34.8K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:12.8%"></div>
+                    </div>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                    <span class="brand-name">K Plus</span>
+                    <span class="brand-views">32.9K views</span>
+                    <div class="brand-bar">
+                        <div class="brand-bar-fill" style="width:12.1%"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ CONNECT ═══════════════════ -->
+    <section id="connect" class="section-block">
+        <div class="section-container">
+            <div class="section-tag center" data-animate>Let's Connect</div>
+            <h2 class="section-heading center" data-animate>Ready to create<br>something amazing?</h2>
+
+            <div class="connect-grid">
+                <!-- Facebook page -->
+                <a href="https://www.facebook.com/bole980221?mibextid=wwXIfr" class="connect-card" target="_blank"
+                    rel="noopener" data-animate>
+                    <div class="connect-icon fb"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="connect-info">
+                        <div class="connect-name">Facebook Page</div>
+                        <div class="connect-sub">@bole980221</div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right connect-arrow"></i>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@harshiii981219?_r=1&_t=ZS-98oSlmb50bs" class="connect-card"
+                    target="_blank" rel="noopener" data-animate>
+                    <div class="connect-icon tk"><i class="fa-brands fa-tiktok"></i></div>
+                    <div class="connect-info">
+                        <div class="connect-name">TikTok</div>
+                        <div class="connect-sub">@harshiii981219</div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right connect-arrow"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/__harshiii___the_creator__?igsh=MWNrd2IyaXlzbmtwMw%3D%3D&utm_source=qr"
+                    class="connect-card" target="_blank" rel="noopener" data-animate>
+                    <div class="connect-icon ig"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="connect-info">
+                        <div class="connect-name">Instagram</div>
+                        <div class="connect-sub">@__harshiii___the_creator__</div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right connect-arrow"></i>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://youtube.com/@bole98?si=NMD-bk-mp4IQbRZc" class="connect-card" target="_blank"
+                    rel="noopener" data-animate>
+                    <div class="connect-icon yt"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="connect-info">
+                        <div class="connect-name">YouTube</div>
+                        <div class="connect-sub">@bole98</div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right connect-arrow"></i>
+                </a>
+
+                <!-- Phone -->
+                <a href="tel:0707420744" class="connect-card contact-wide" data-animate>
+                    <div class="connect-icon phone"><i class="fa-solid fa-phone"></i></div>
+                    <div class="connect-info">
+                        <div class="connect-name">Call Directly</div>
+                        <div class="connect-sub">070 742 0744</div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right connect-arrow"></i>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/94707420744" class="connect-card contact-wide" target="_blank" rel="noopener"
+                    data-animate>
+                    <div class="connect-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="connect-info">
+                        <div class="connect-name">WhatsApp</div>
+                        <div class="connect-sub">070 742 0744</div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right connect-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">Harshi<span>iii</span></div>
+            <p class="footer-copy">© 2026 Harshiii 🧸 · Kurunegala · Designed with Heart</p>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/bole980221?mibextid=wwXIfr" target="_blank" rel="noopener"
+                    aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@harshiii981219?_r=1&_t=ZS-98oSlmb50bs" target="_blank" rel="noopener"
+                    aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/__harshiii___the_creator__?igsh=MWNrd2IyaXlzbmtwMw%3D%3D&utm_source=qr"
+                    target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://youtube.com/@bole98?si=NMD-bk-mp4IQbRZc" target="_blank" rel="noopener"
+                    aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js r134 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

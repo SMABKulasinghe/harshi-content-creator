@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Cafe Belaro",
+        "category": "Cafe",
+        "lat": 7.4851,
+        "lng": 80.3644,
+        "description": "Popular cafe with great coffee and snacks.",
+        "views": "200.2K"
+    },
+    {
+        "name": "K Food",
+        "category": "Restaurant",
+        "lat": 7.4862,
+        "lng": 80.3621,
+        "description": "Delicious local and international cuisine.",
+        "views": "188K"
+    },
+    {
+        "name": "Chagiya Korean Ramen",
+        "category": "Korean",
+        "lat": 7.4835,
+        "lng": 80.3670,
+        "description": "Authentic Korean ramen experience.",
+        "views": "165.6K"
+    },
+    {
+        "name": "Cocoberry",
+        "category": "Dessert",
+        "lat": 7.4880,
+        "lng": 80.3610,
+        "description": "Sweet treats and amazing desserts.",
+        "views": "272K"
+    }
+]

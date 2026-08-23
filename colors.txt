@@ -1,0 +1,17 @@
+Main Colors
+-----------
+Primary Pink:          #FF7EB9
+Light Pink:            #FFB3D6
+Dark Pink:             #E66AA3
+Soft Background Pink:  #FFF9FB
+
+Typography
+----------
+Main Text:             #2D2D2D
+Muted Text:            #666666
+White:                 #FFFFFF
+
+Glassmorphism & Transparencies
+------------------------------
+Frosted Glass:         rgba(255, 255, 255, 0.6) to rgba(255, 255, 255, 0.9)
+Pink Shadow/Glow:      rgba(255, 126, 185, 0.15) to rgba(255, 126, 185, 0.3)

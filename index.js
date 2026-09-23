@@ -213,6 +213,75 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchYouTubeStats();
 
     // ─────────────────────────────────────────────────────
+    // 8.5 DYNAMIC DATA RENDERER (placesData & otherData from data.js)
+    // ─────────────────────────────────────────────────────
+    function parseViews(viewStr) {
+        if (!viewStr) return 0;
+        const s = viewStr.toString().trim().toUpperCase();
+        if (s.endsWith('M')) return parseFloat(s.replace('M', '')) * 1_000_000;
+        if (s.endsWith('K')) return parseFloat(s.replace('K', '')) * 1_000;
+        return parseFloat(s) || 0;
+    }
+
+    function renderBrandsAndStats() {
+        const places = typeof placesData !== 'undefined' ? placesData : [];
+        const others = typeof otherData !== 'undefined' ? otherData : [];
+        const allItems = [...places, ...others];
+
+        if (allItems.length === 0) return;
+
+        // Sort items by view count descending
+        allItems.sort((a, b) => parseViews(b.views) - parseViews(a.views));
+
+        const totalCollabs = allItems.length;
+        const maxViewsItem = allItems[0];
+
+        // Update Hero Stats
+        const bestViewsEl = document.getElementById('best-video-views');
+        if (bestViewsEl && maxViewsItem) {
+            bestViewsEl.textContent = `${maxViewsItem.views}+`;
+        }
+
+        const collabsCountEl = document.getElementById('brand-collabs-count');
+        if (collabsCountEl) {
+            collabsCountEl.textContent = `${totalCollabs}+`;
+        }
+
+        // Update Ticker
+        const tickerContainer = document.querySelector('.brands-ticker');
+        if (tickerContainer) {
+            const pillsHtml = allItems.map(item => `<div class="brand-pill">${item.name}</div>`).join('');
+            tickerContainer.innerHTML = pillsHtml + pillsHtml;
+        }
+
+        // Update Brands Grid
+        const brandsGrid = document.querySelector('.brands-grid');
+        if (brandsGrid) {
+            const maxViewsNum = parseViews(maxViewsItem.views) || 1;
+
+            brandsGrid.innerHTML = allItems.map(item => {
+                const vNum = parseViews(item.views);
+                const pct = Math.max(8, Math.min(100, (vNum / maxViewsNum) * 100)).toFixed(1);
+                const isHot = vNum >= 150000;
+                const hotClass = isHot ? 'brand-card hot' : 'brand-card';
+
+                return `
+                    <div class="${hotClass}">
+                        <div class="brand-fire"><i class="fa-solid fa-fire"></i></div>
+                        <span class="brand-name">${item.name}</span>
+                        <span class="brand-views">${item.views} views</span>
+                        <div class="brand-bar">
+                            <div class="brand-bar-fill" style="width:${pct}%"></div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+    }
+
+    renderBrandsAndStats();
+
+    // ─────────────────────────────────────────────────────
     // 9. THREE.JS SCENE — Dark Immersive 3D Background
     // ─────────────────────────────────────────────────────
     if (typeof THREE === 'undefined') return;

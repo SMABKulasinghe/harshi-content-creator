@@ -22,11 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollWheelZoom: false
     }).setView(kurunegala, 14);
 
-    // Use CartoDB Voyager tiles (Free, beautiful, and unrestricted for web/local use)
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 20
+    // Use Esri World Street Map tiles (100% Free, high quality, no watermarks, no API key required)
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012',
+        maxZoom: 19
     }).addTo(map);
 
     // Load initial data

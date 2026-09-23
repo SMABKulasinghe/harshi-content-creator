@@ -3,17 +3,26 @@ let markers = [];
 let userLocationMarker = null;
 let isNearMeFilterActive = false;
 
+function getAllPlaces() {
+    const places = typeof placesData !== 'undefined' ? placesData : [];
+    const others = typeof otherData !== 'undefined' ? otherData : [];
+    return [...places, ...others];
+}
+
 // Initialize map once DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Kurunegala coordinates as the center
     const kurunegala = [7.4818, 80.3609];
 
-    // Initialize the Leaflet map
-    map = L.map('google-map', {
+    const mapElement = document.getElementById('leaflet-map') || document.getElementById('google-map');
+    if (!mapElement) return;
+
+    // Initialize Leaflet map (100% free & open-source, no Google API key required)
+    map = L.map(mapElement, {
         scrollWheelZoom: false
     }).setView(kurunegala, 14);
 
-    // Use CartoDB Voyager tiles
+    // Use CartoDB Voyager tiles (Free, beautiful, and unrestricted for web/local use)
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
@@ -21,8 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }).addTo(map);
 
     // Load initial data
-    if (typeof placesData !== 'undefined' && placesData.length > 0) {
-        populateMapAndList(placesData);
+    const allPlaces = getAllPlaces();
+    if (allPlaces.length > 0) {
+        populateMapAndList(allPlaces);
     } else {
         document.getElementById('places-list').innerHTML = `<div class="place-loading">Failed to load locations. Check data.js</div>`;
     }
@@ -36,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function handleNearMeClick() {
     const nearMeBtn = document.getElementById('near-me-btn');
+    const allPlaces = getAllPlaces();
     
     if (isNearMeFilterActive) {
         // Reset filter
@@ -49,8 +60,8 @@ function handleNearMeClick() {
         }
         
         // Remove distance property from places to clean up UI
-        placesData.forEach(p => delete p.distance);
-        populateMapAndList(placesData);
+        allPlaces.forEach(p => delete p.distance);
+        populateMapAndList(allPlaces);
         
     } else {
         // Activate filter
@@ -80,7 +91,7 @@ function handleNearMeClick() {
                     userLocationMarker.bindPopup('<b>You are here</b>');
 
                     // Filter places within 1km
-                    const nearPlaces = placesData.filter(place => {
+                    const nearPlaces = allPlaces.filter(place => {
                         const dist = getDistanceFromLatLonInKm(userLat, userLng, place.lat, place.lng);
                         place.distance = dist; // Store for UI
                         return dist <= 1.0;
@@ -129,13 +140,13 @@ function populateMapAndList(places, userCoords = null) {
         markers.push(marker);
         bounds.extend(position);
 
-        const distHtml = place.distance !== undefined ? `<div class="views" style="color:#666; margin-bottom: 4px;"><i class="fa-solid fa-person-walking"></i> ${(place.distance * 1000).toFixed(0)}m away</div>` : '';
+        const descHtml = place.description ? `<p>${place.description}</p>` : '';
 
         const contentString = `
             <div class="map-info-window">
                 <h4>${place.name}</h4>
                 <p class="cat">${place.category}</p>
-                <p>${place.description}</p>
+                ${descHtml}
                 ${distHtml}
                 <div class="views"><i class="fa-solid fa-fire"></i> ${place.views} views</div>
                 <a href="https://www.google.com/maps/dir/?api=1&destination=${place.lat},${place.lng}" target="_blank" class="directions-btn"><i class="fa-solid fa-location-arrow"></i> Get Directions</a>
